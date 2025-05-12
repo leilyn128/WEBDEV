@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../img/back3.png') no-repeat center center/cover;
+    color: #333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+nav {
+    width: 220px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+    height: 100vh;
+    padding-top: 20px;
+    font-weight: bold;
+}
+.nav-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nav-logo img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%; /* Optional: makes the logo circular */
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #e9c41e;
+    color: #000;
+
+}
+.container {
+    width: 800px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #ecf0f1;
+}
+
+h1 {
+    color: #ffb703;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.note {
+    margin-top: 30px;
+    font-style: italic;
+    color: #ffb703;
+}

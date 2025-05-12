@@ -1,0 +1,143 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/back3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+
+}
+
+nav {
+    width: 220px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+    height: 100vh;
+    padding-top: 20px;
+    font-weight: bold;
+
+}
+.nav-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nav-logo img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%; /* Optional: makes the logo circular */
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #e9c41e;
+    font-weight: bold;
+    color: #000;
+
+}
+
+.container {
+    flex: 1;
+    padding: 30px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Form and Dropdown Styles */
+form {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto;
+    overflow: auto;
+    overflow-y: auto;
+    max-height: 400vh; /* scroll limit */
+    padding-right: 10px;
+    padding-bottom: 50px;
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #333;
+}
+h1{
+    text-align: center;
+    padding-top: 2px;
+
+
+}
+label {
+    font-size: 1rem;
+    color: #f5efef;
+    margin-bottom: 8px;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+select:focus {
+    border-color: #ffcc00;
+    background-color: #f1f8ff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e0b800;
+}
+
+button:focus {
+    outline: none;
+}
