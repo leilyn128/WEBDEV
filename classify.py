@@ -1,36 +1,24 @@
 import sys
-import pickle
+import joblib
 import numpy as np
-import warnings
 
-warnings.filterwarnings("ignore", category=UserWarning)
-
-if len(sys.argv) < 3:
-    print("Usage: python classify.py model_file feature1 feature2 ...")
+if len(sys.argv) < 10:
+    print("Usage: python classify.py model_file feature1 feature2 ... feature8")
     sys.exit(1)
 
+# Load model and input data
 model_file = sys.argv[1]
-features = np.array(sys.argv[2:], dtype=float).reshape(1, -1)
+features = list(map(float, sys.argv[2:]))
+data_to_classify = np.array(features).reshape(1, -1)
 
-with open(model_file, 'rb') as f:
-    loaded = pickle.load(f)
+# Load trained model
+model = joblib.load(model_file)
 
-if isinstance(loaded, dict) and 'model' in loaded:
-    model = loaded['model']
-    scaler = loaded.get('scaler', None)
-elif hasattr(loaded, 'predict'):
-    model = loaded
-    scaler = None
-else:
-    print("Unsupported model format.")
-    sys.exit(1)
+# Predict
+prediction = model.predict(data_to_classify)[0]
 
-if scaler:
-    features = scaler.transform(features)
-
-predicted = model.predict(features)[0]
-
-classification_labels = {
+# Optional: Map to label if using label encoding
+labels = {
     0: "not_recom",
     1: "priority",
     2: "recommend",
@@ -38,6 +26,4 @@ classification_labels = {
     4: "very-recommend"
 }
 
-label = classification_labels.get(predicted, "Unknown")
-print(label)  # This is the output returned to PHP
-sys.exit(0)
+print(labels.get(prediction, "Unknown"))
