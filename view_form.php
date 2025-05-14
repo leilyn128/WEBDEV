@@ -30,9 +30,6 @@ $currentPage = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
     <link rel="stylesheet" href="css/forms.css">
 </head>
 <body>
-                
-
-
 
 <nav>
     <div class="nav-logo">
@@ -51,56 +48,65 @@ $currentPage = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 </nav>
 
 <main>
-            <div class="evaluation-container">
-                    <h2>My Evaluation Records</h2>
+    <div class="evaluation-container">
+        <h2>My Evaluation Records</h2>
 
-                    <?php if (mysqli_num_rows($result) > 0): ?>
-                        <table class="styled-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Parents</th>
-                                    <th>Nursery</th>
-                                    <th>Form Status</th>
-                                    <th>Children</th>
-                                    <th>Housing</th>
-                                    <th>Finance</th>
-                                    <th>Social</th>
-                                    <th>Health</th>
-                                    <th>Target</th> 
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php while ($row = mysqli_fetch_assoc($result)): ?>
-                                <tr>
-                                    <td><?= $row['id']; ?></td>
-                                    <td><?= htmlspecialchars($row['parents']) ?></td>
-                                    <td><?= htmlspecialchars($row['has_nurs']) ?></td>
-                                    <td><?= htmlspecialchars($row['form_status']) ?></td>
-                                    <td><?= htmlspecialchars($row['children']) ?></td>
-                                    <td><?= htmlspecialchars($row['housing']) ?></td>
-                                    <td><?= htmlspecialchars($row['finance']) ?></td>
-                                    <td><?= htmlspecialchars($row['social']) ?></td>
-                                    <td><?= htmlspecialchars($row['health']) ?></td>
-                                    <td><?= htmlspecialchars($row['target'] ?? '') ?></td>
-                                    <td>
-                                        <a href="edit_forms.php?id=<?= $row['id']; ?>" style="color: #00cc66; font-weight: bold; text-decoration: none;">✏️ Edit</a> |
-                                        <a href="delete_form.php?id=<?= $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this record?');" style="color: red; font-weight: bold; text-decoration: none;">🗑️ Delete</a>
-                                    </td>
-                                </tr>
-                            <?php endwhile; ?>
-                            </tbody>
-                        </table>
-                    <?php else: ?>
-                        <p class="no-records">No records found!</p>
-                    <?php endif; ?>
-            </div>
-        </main>
-</body>
-</html>
+        <?php if (mysqli_num_rows($result) > 0): ?>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Parents</th>
+                        <th>Nursery</th>
+                        <th>Form Status</th>
+                        <th>Children</th>
+                        <th>Housing</th>
+                        <th>Finance</th>
+                        <th>Social</th>
+                        <th>Health</th>
+                        <th>Target</th> 
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <tr>
+                        <td><?= $row['id']; ?></td>
+                        <td><?= htmlspecialchars($row['parents']) ?></td>
+                        <td><?= htmlspecialchars($row['has_nurs']) ?></td>
+                        <td><?= htmlspecialchars($row['form_status']) ?></td>
+                        <td><?= htmlspecialchars($row['children']) ?></td>
+                        <td><?= htmlspecialchars($row['housing']) ?></td>
+                        <td><?= htmlspecialchars($row['finance']) ?></td>
+                        <td><?= htmlspecialchars($row['social']) ?></td>
+                        <td><?= htmlspecialchars($row['health']) ?></td>
+                        <td>
+                            <?= htmlspecialchars($row['target'] ?? 'No Target Found') ?>
+                        </td>
+                        <td>
+                            <a href="edit_forms.php?id=<?= $row['id']; ?>" style="color: #00cc66; font-weight: bold; text-decoration: none;">✏️ Edit</a> |
+                            <a href="delete_form.php?id=<?= $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this record?');" style="color: red; font-weight: bold; text-decoration: none;">🗑️ Delete</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+            <p class="no-records">No records found!</p>
+        <?php endif; ?>
+    </div>
+</main>
 
 <?php
+// Debugging: Check if data is being fetched correctly
+if (mysqli_num_rows($result) > 0) {
+    // Uncomment the following line for debugging
+    // var_dump(mysqli_fetch_all($result, MYSQLI_ASSOC));
+}
+
 mysqli_stmt_close($stmt);
 mysqli_close($dbhandle);
 ?>
+
+</body>
+</html>

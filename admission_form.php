@@ -42,73 +42,73 @@ $currentPage = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
             <label for="parents">Parents</label>
             <select id="parents" name="parents" required>
                 <option value="" disabled selected>Select parent's status</option>
-                <option value="Usual">Usual</option>
-                <option value="Pretentious">Pretentious</option>
-                <option value="Great Pretentious">Great Pretentious</option>
+                <option value="0">Usual</option>
+                <option value="1">Pretentious</option>
+                <option value="2">Great Pretentious</option>
             </select>
 
             <label for="has_nurs">Has Nursery</label>
             <select id="has_nurs" name="has_nurs" required>
                 <option value="" disabled selected>Select if nursery is attended</option>
-                <option value="Proper">Proper</option>
-                <option value="Less Proper">Less Proper</option>
-                <option value="Improper">Improper </option>
-                <option value="Critical">Critical </option>
-                <option value="Very Critical">Very Critical </option>
+                <option value="0">Proper</option>
+                <option value="1">Less Proper</option>
+                <option value="2">Improper </option>
+                <option value="3">Critical </option>
+                <option value="4">Very Critical </option>
 
             </select>
 
             <label for="form">Form</label>
             <select id="form_status" name="form_status" required>
                 <option value="" disabled selected>Select child’s form</option>
-                <option value="Complete">Complete</option>
-                <option value="Completed">Completed</option>
-                <option value="Incomplete">Incomplete</option>
-                <option value="Foster">Foster</option>
+                <option value="0">Complete</option>
+                <option value="1">Completed</option>
+                <option value="2">Incomplete</option>
+                <option value="3">Foster</option>
 
             </select>
 
             <label for="children">Children</label>
             <select id="children" name="children" required>
                 <option value="" disabled selected>Select number of children</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="More than 3">More than 3</option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">More than 3</option>
             </select>
 
             <label for="housing">Housing</label>
             <select id="housing" name="housing" required>
                 <option value="" disabled selected>Select housing condition</option>
-                <option value="Convenient">Convenient</option>
-                <option value="Less convenient">Less Convenient</option>
-                <option value="Critical">Critical</option>
+                <option value="0">Convenient</option>
+                <option value="1">Less Convenient</option>
+                <option value="2">Critical</option>
             </select>
 
             <label for="finance">Finance</label>
             <select id="finance" name="finance" required>
                 <option value="" disabled selected>Select financial situation</option>
-                <option value="Convenient">Convenient</option>
-                <option value="Inconvenient">Inconvenient</option>
+                <option value="0">Convenient</option>
+                <option value="1">Inconvenient</option>
             </select>
 
             <label for="social">Social</label>
             <select id="social" name="social" required>
                 <option value="" disabled selected>Select social condition</option>
-                <option value="Problematic">Problematic</option>
-                <option value="Slightly problematic">Slightly Problematic</option>
-                <option value="Non_Problematic">Non-Problematic</option>
+                <option value="0">Problematic</option>
+                <option value="1">Slightly Problematic</option>
+                <option value="2">Non-Problematic</option>
 
             </select>
 
             <label for="health">Health</label>
             <select id="health" name="health" required>
                 <option value="" disabled selected>Select health status</option>
-                <option value="Special Priority">Special Priority</option>
-                <option value="Priority">Priority</option>
-                <option value="Very Recommended">Very Recommended</option>
-                <option value="Recommended">Recommended</option>
-                <option value="Not Recommended">Not Recommended</option>
+                <option value="0">Special Priority</option>
+                <option value="1">Priority</option>
+                <option value="2">Very Recommended</option>
+                <option value="3">Recommended</option>
+                <option value="4">Not Recommended</option>
             </select>
 
             <button type="submit">Submit</button>
